@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Pre-push hook: block pushes in worker mode
+# Installed by TmuxCode make install
+
+if [ "${TMUXCODE_MODE:-}" = "worker" ] && [ "${TMC_ALLOW_PUSH:-}" != "1" ]; then
+  echo "ERROR: git push is blocked in worker mode (TMUXCODE_MODE=worker)" >&2
+  echo "  Workers should never push - commits are made locally and pushed by managers." >&2
+  echo "  Override: Set TMC_ALLOW_PUSH=1 to bypass (emergency use only)" >&2
+  exit 1
+fi

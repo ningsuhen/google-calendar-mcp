@@ -6,3 +6,12 @@ gcp-oauth.keys.json
 coverage/
 settings.local.json
 CLAUDE.md
+
+# TmuxCode
+.tmuxcode/
+.worktrees/
+.tmuxcode/manager-session.json
+
+# TmuxCode
+.tmuxcode/tasks/
+.tmuxcode/cross-model/
